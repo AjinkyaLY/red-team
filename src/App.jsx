@@ -67,22 +67,41 @@ function App() {
           exploreButton.style.display = 'none'; // Hide the button after animation completes
         },
       });
-      gsap.fromTo(
-        textElements,
-        {
-          y: 100,
-          opacity: 0,
-        },
-        {
-          y: 40,
-          opacity: 1,
-          stagger: 0.05,
-          duration: 1.5,
-          ease: 'power4.out',
-          display: 'flex',
-          delay: 2,
-        },
-      );
+      if (screenWidth <= 768) {
+        gsap.fromTo(
+          textElements,
+          {
+            y: 100,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.05,
+            duration: 1.5,
+            ease: 'power4.out',
+            display: 'flex',
+            delay: 2,
+          },
+        );
+      } else {
+        gsap.fromTo(
+          textElements,
+          {
+            y: 100,
+            opacity: 0,
+          },
+          {
+            y: 40,
+            opacity: 1,
+            stagger: 0.05,
+            duration: 1.5,
+            ease: 'power4.out',
+            display: 'flex',
+            delay: 2,
+          },
+        );
+      }
 
       isZoomed = true;
     } else {
@@ -128,7 +147,7 @@ function App() {
           </div>
           <div
             id='message'
-            className='absolute hidden flex-col text-center text-white top-[22%] md:top-[3%] px-5 py-3 leading-6 text-2xl rounded-[50px] w-full xl:top-[4%]'
+            className='absolute hidden flex-col text-center text-white top-[23%] md:top-[3%] px-5 py-3 leading-6 text-2xl rounded-[50px] w-full xl:top-[4%]'
           >
             <h2 className='text-2xl text-primary md:text-5xl'>RED TEAM</h2>
             <h1 className='text-[40px] z-0 mb-28 md:text-9xl md:mb-48'>COMING SOON...</h1>
