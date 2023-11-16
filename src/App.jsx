@@ -75,7 +75,7 @@ function App() {
             opacity: 0,
           },
           {
-            y: 0,
+            y: -20,
             opacity: 1,
             stagger: 0.05,
             duration: 1.5,
@@ -162,7 +162,7 @@ function App() {
           >
             <h2 className='text-2xl text-transparent md:text-5xl'>.</h2>
             <h1 className='text-[40px] text-transparent z-0 mb-28 md:text-9xl md:mb-48'>.</h1>
-            <h1 className='p-4 block m-auto text-4xl z-100 text-white border w-fit left-0 md:text-[122px] md:p-10'>
+            <h1 className='p-4 block m-auto text-[32px] z-100 text-white border w-fit left-0 md:text-[122px] md:p-10'>
               ARE YOU READY?
             </h1>
           </div>
