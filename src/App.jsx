@@ -81,7 +81,7 @@ function App() {
             duration: 1.5,
             ease: 'power4.out',
             display: 'flex',
-            delay: 2,
+            delay: 1,
           },
         );
       } else {
@@ -98,7 +98,7 @@ function App() {
             duration: 1.5,
             ease: 'power4.out',
             display: 'flex',
-            delay: 2,
+            delay: 1,
           },
         );
       }
