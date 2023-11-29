@@ -6,7 +6,11 @@
   font-family: ferretface;
   src: url(/images/ferretface.ttf);
 }
+@font-face {
+  font-family: duneRise;
+  src: url(/images/Dune_Rise.ttf);
+}
 
 body {
-  font-family: ferretface;
+  font-family: duneRise;
 }
