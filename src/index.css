@@ -14,3 +14,8 @@
 body {
   font-family: duneRise;
 }
+
+.overlay {
+  opacity: 98%;
+  background: linear-gradient(180deg, #1d1c1f 0%, rgba(29, 28, 31, 0.4) 44.61%, #1d1c1f 98%);
+}
