@@ -17,36 +17,26 @@ function App() {
     gsap.set(spaceShip, { opacity: 0, scale: 0.2 });
     // Toggle the zoom effect using GSAP
 
-    gsap.to(
+    gsap.fromTo(
       spaceShip,
       {
-        scrollTrigger: {
-          trigger: triger1,
-          start: 'top center',
-          markers: true,
-          toggleActions: 'restart pause reverse pause',
-        },
         y: -1000,
         x: 1500,
         opacity: 1,
         scale: 0.5,
         display: 'flex',
       },
-      // {
-      //   opacity: 1,
-      //   display: 'flex',
-      //   duration: 2, // Animation duration in seconds
-      //   y: 0,
-      //   x: 0,
-      //   scale: 1.5, // Zoom factor for the planet image (e.g., 1.5 means 150% zoom)
-      //   ease: 'expoScale(0.5,7,none)', // Easing function
-      // },
+      {
+        opacity: 1,
+        display: 'flex',
+        duration: 2, // Animation duration in seconds
+        y: 0,
+        x: 0,
+        scale: 1.5, // Zoom factor for the planet image (e.g., 1.5 means 150% zoom)
+        ease: 'expoScale(0.5,7,none)', // Easing function
+      },
     );
   }
-
-  useEffect(() => {
-    spaceShip();
-  }, []);
 
   function getInsideSpaceship() {
     const spaceShip = document.getElementById('spaceship');
@@ -156,7 +146,7 @@ function App() {
     });
 
     gsap.to(portal, {
-      scale: 20,
+      scale: 5,
       duration: 3,
       ease: 'expoScale(0.5,7,none)',
       display: 'flex',
