@@ -60,14 +60,12 @@ nav::before {
   left: 0;
   width: 100%;
   height: 0.5px;
-  background: linear-gradient(
-      to right,
+  background: linear-gradient(to right,
       transparent 0%,
       rgba(255, 255, 255, 0.3) 100%,
-      transparent 0%
-    ),
+      transparent 0%),
     linear-gradient(to left, transparent 0%, rgba(255, 255, 255, 0.3) 100%, transparent 0%);
-  background-size: 50% 100%; /* Adjust the size based on your preference */
+  background-size: 50% 100%;
   background-position:
     left bottom,
     right bottom;
@@ -100,12 +98,25 @@ nav::before {
   position: relative;
 }
 
+.section-one::after {
+  content: "";
+  position: relative;
+  background-image: url("/red-team/public/images/eclipse.svg");
+}
+
 .section-one .planet {
-  margin-top: 18rem;
+  /* margin-top: 18rem;
   width: 33vw;
   height: 33vw;
-  position: relative;
+  position: relative; */
+
+  position: absolute;
+  bottom: 10%;
+  width: 34vw;
+  height: 34vw;
 }
+
+
 
 .text-overlay {
   position: absolute;
@@ -126,7 +137,7 @@ nav::before {
 .text-overlay2 {
   position: absolute;
   width: 100vw;
-  top: 23%;
+  top: 20%;
   z-index: -1;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -145,4 +156,59 @@ nav::before {
   position: absolute;
   bottom: 0%;
   width: 100vw;
+}
+
+
+/*Media queries*/
+@media only screen and (max-width: 600px) {
+
+  .section-one .planet {
+    position: absolute;
+    bottom: 2%;
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .text-overlay {
+    font-size: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 27%;
+    width: 100vw;
+    transform: translateX(-50%);
+  }
+
+  .text-overlay2 {
+    font-size: 2rem;
+  }
+
+  .nav-right {
+    display: none;
+  }
+
+  .nav-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+
+  nav::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.5px !important;
+    /* background: linear-gradient(to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 100%,
+        transparent 0%),
+      linear-gradient(to left, transparent 0%, rgba(255, 255, 255, 0.3) 100%, transparent 0%);
+    background-size: 50% 100%;
+    background-position:
+      left bottom,
+      right bottom;
+    background-repeat: no-repeat; */
+  }
 }
