@@ -37,12 +37,13 @@ const Slider = () => {
     const screenWidth = window.innerWidth;
     let slideWidth = 0;
     const padding = 80;
-    const mobpadding = 140;
+    const mobpadding = 700;
 
     if (screenWidth >= 1024) {
       slideWidth = (screenWidth - padding * 2) / 3.5;
     } else {
       slideWidth = (sliderRef.current.clientWidth - mobpadding * 2) / images.length;
+      console.log(sliderRef.current.clientWidth - mobpadding * 2)
     }
 
     gsap.to(sliderRef.current, {
@@ -63,11 +64,21 @@ const Slider = () => {
   return (
     <div>
       <div className='bg-black py-[108px] relative '>
-        <h1 className='text-white text-2xl lg:text-[40px] text-center mb-10 lg:mb-16'>
+      <div className='overlay absolute w-full h-full z-[1] top-0'></div>
+        <video
+          className='w-full h-full obj  z-0 absolute object-cover top-0'
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src='/images/footer-bg-video.mp4' type='video/mp4' />
+        </video>
+        <h1 className='text-white relative z-10 text-2xl lg:text-[40px] text-center mb-10 lg:mb-16'>
           {' '}
-          OUR PLAYERS
+          Meet the Axelions
         </h1>
-        <div className='slider-container  w-full mx-auto overflow-hidden  '>
+        <div className='slider-container relative z-10  w-full mx-auto overflow-hidden  '>
           <div
             className='slides flex gap-4 lg:gap-6 pl-4 lg:pl-20 mb-8 lg:mb-0'
             ref={sliderRef}

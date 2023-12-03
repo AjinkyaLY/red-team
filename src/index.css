@@ -11,6 +11,23 @@
   src: url(/images/Dune_Rise.ttf);
 }
 
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FF0400; 
+}
+
+
 body {
   font-family: duneRise;
 }
