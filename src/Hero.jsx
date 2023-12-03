@@ -15,6 +15,7 @@ function Hero() {
         </nav>
         <div className='section-one'>
           {/* Video */}
+<div className="overlay"></div>
           <video className='background-video' autoPlay loop muted>
             <source src='/images/hero-banner-video.mp4' type='video/mp4' />
             Your browser does not support the video tag.
@@ -26,7 +27,8 @@ function Hero() {
           <div className='text-overlay2'>
             <p>Blazing through</p>
           </div>
-          <img src='/images/mountains.png' alt='' className='mountain' />
+          <img src='/images/mountains.png' alt='' className='mountain hidden  md:block' />
+          <img src="/images/mountains-hero-mb.png" className='mountain md:hidden' alt="" />
         </div>
       </div>
     </>
