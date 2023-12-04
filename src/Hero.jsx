@@ -4,13 +4,13 @@ function Hero() {
     <>
       <div className='main'>
         <nav>
-          <div className='nav-left'>
-            <img src='/images/logo.png' alt='' />
+          <div className='nav-left '>
+            <img src='/images/logo.svg' className='h-[76px]' alt='' />
             <p>AXELONS</p>
           </div>
           <div className='nav-right'>
-            <p>our story</p>
-            <p>our team</p>
+            {/* <p>our story</p>
+            <p>our team</p> */}
           </div>
         </nav>
         <div className='section-one'>

@@ -130,7 +130,7 @@ const Slider = () => {
               </svg>
             </button>
             <button
-              className='text-white pr-[73px] cursor-pointer'
+              className='text-white pr-[73px]'
               // style={{
               //   background: `linear-gradient(270deg, #1D1C1F 14.29%, rgba(29, 28, 31, 0.00) 88.1%)`,
               // }}
@@ -175,7 +175,7 @@ const Slider = () => {
         <div className='z-10 text-[32px] text-white text-center top-[180px] bottom-[242px] md:top-[200px] left-0 right-0 md:bottom-[464px] font-black absolute flex items-center flex-col justify-center'>
           <img src='/images/logo.svg' className='w-[105px] mb-10' alt='' />
           <h1 className='mb-6 lg:text-5xl'>Axelons</h1>
-          <h1 className='text-2xl text-primary-red font-black'>Blazing through the Cosmos</h1>
+          <h1 className='text-[24px] text-primary-red font-semibold'>Blazing through the Cosmos</h1>
         </div>
         <img
           src='/images/mountains-mb.png'
