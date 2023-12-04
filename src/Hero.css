@@ -14,11 +14,6 @@ html {
   font-family: dune;
 }
 
-body {
-  width: 100%;
-  height: 100%;
-}
-
 .main {
   position: relative;
   width: 100%;
@@ -61,10 +56,12 @@ nav::before {
   left: 0;
   width: 100%;
   height: 0.5px;
-  background: linear-gradient(to right,
+  background: linear-gradient(
+      to right,
       transparent 0%,
       rgba(255, 255, 255, 0.3) 100%,
-      transparent 0%),
+      transparent 0%
+    ),
     linear-gradient(to left, transparent 0%, rgba(255, 255, 255, 0.3) 100%, transparent 0%);
   background-size: 50% 100%;
   background-position:
@@ -100,9 +97,9 @@ nav::before {
 }
 
 .section-one::after {
-  content: "";
+  content: '';
   position: relative;
-  background-image: url("/red-team/public/images/eclipse.svg");
+  background-image: url('/red-team/public/images/eclipse.svg');
 }
 
 .section-one .planet {
@@ -111,8 +108,6 @@ nav::before {
   width: 34vw;
   height: 34vw;
 }
-
-
 
 .text-overlay {
   position: absolute;
@@ -154,10 +149,8 @@ nav::before {
   width: 100vw;
 }
 
-
 /*Media queries*/
 @media only screen and (max-width: 600px) {
-
   .section-one .planet {
     position: absolute;
     bottom: 2%;
