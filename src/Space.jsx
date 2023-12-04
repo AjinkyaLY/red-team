@@ -55,8 +55,6 @@ function Space() {
             opacity: 0,
             scale: 0,
             display: 'none',
-            duration: 0.2,
-            ease: 'expoScale(0.5,7,none)',
           });
           gsap.to(passageTextRef.current, {
             y: 500,
@@ -92,8 +90,6 @@ function Space() {
             opacity: 0,
             scale: 0,
             display: 'none',
-            duration: 0.2,
-            ease: 'expoScale(0.5,7,none)',
           });
           gsap.to(passageTextRef.current, {
             y: 500,
@@ -123,8 +119,6 @@ function Space() {
             opacity: 0,
             scale: 0,
             display: 'none',
-            duration: 0.2,
-            ease: 'expoScale(0.5,7,none)',
           });
           gsap.to(passageTextRef.current, {
             y: 500,
@@ -151,8 +145,6 @@ function Space() {
             opacity: 0,
             scale: 0,
             display: 'none',
-            duration: 0.2,
-            ease: 'expoScale(0.5,7,none)',
           });
           gsap.to(passageTextRef.current, {
             y: 500,
@@ -192,8 +184,6 @@ function Space() {
             opacity: 0,
             scale: 0,
             display: 'none',
-            duration: 0.2,
-            ease: 'expoScale(0.5,7,none)',
           });
           gsap.to(portalRef.current, {
             opacity: 0,
@@ -226,8 +216,6 @@ function Space() {
             opacity: 0,
             scale: 0,
             display: 'none',
-            duration: 0.2,
-            ease: 'expoScale(0.5,7,none)',
           });
           gsap.to(portalRef.current, {
             opacity: 0,
@@ -266,8 +254,6 @@ function Space() {
             opacity: 0,
             scale: 0,
             display: 'none',
-            duration: 0.2,
-            ease: 'expoScale(0.5,7,none)',
           });
           gsap.to(passageTextRef.current, {
             y: 500,
@@ -303,8 +289,6 @@ function Space() {
             opacity: 0,
             scale: 0,
             display: 'none',
-            duration: 0.2,
-            ease: 'expoScale(0.5,7,none)',
           });
           gsap.to(passageTextRef.current, {
             y: 500,
@@ -339,7 +323,6 @@ function Space() {
           display: 'none',
           duration: 1,
           ease: 'expoScale(0.5,7,none)',
-          delay: 1,
         });
         gsap.to(passageRef.current, {
           opacity: 1,
@@ -347,7 +330,6 @@ function Space() {
           display: 'flex',
           duration: 1,
           ease: 'expoScale(0.5,7,none)',
-          delay: 1,
         });
         if (screenWidth >= 768) {
           gsap.fromTo(
@@ -362,7 +344,7 @@ function Space() {
               duration: 1,
               ease: 'expoScale(0.5,7,none)',
               display: 'flex',
-              delay: 2,
+              delay: 1,
             },
           );
         } else {
@@ -378,7 +360,7 @@ function Space() {
               duration: 1,
               ease: 'expoScale(0.5,7,none)',
               display: 'flex',
-              delay: 2,
+              delay: 1,
             },
           );
         }
