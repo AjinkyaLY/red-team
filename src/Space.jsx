@@ -466,7 +466,7 @@ function Space() {
         gsap.to(portalRef.current, {
           opacity: 1,
           rotateZ: 100,
-          duration: 2,
+          duration: 1,
           scale: 5,
           ease: 'expoScale(0.5,7,none)',
           display: 'flex',
@@ -482,7 +482,7 @@ function Space() {
           opacity: 0,
           duration: 0.2,
           ease: 'expoScale(0.5,7,none)',
-          delay: 2,
+          delay: 1,
         });
       },
       onLeaveBack: () => {
@@ -503,7 +503,7 @@ function Space() {
         gsap.to(portalRef.current, {
           opacity: 0,
           rotateZ: 0,
-          duration: 2,
+          duration: 1,
           scale: 0,
           ease: 'expoScale(0.5,7,none)',
           display: 'none',
