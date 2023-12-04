@@ -1,7 +1,7 @@
 import Hero from './Hero';
 import Space from './Space';
 import Background from './assets/background.svg';
-import Slider from './Slider.jsx';
+import Slider from './slider.jsx';
 import { useRef, useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
