@@ -3,6 +3,7 @@ import Background from './assets/background.svg';
 import Backdrop from './assets/backdrop.svg';
 import Passage from './assets/passage.svg';
 import PassageText from './assets/passageText.svg';
+import MobilePassageText from './assets/mobilePassageText.svg';
 import Portal from './assets/portal.svg';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -11,6 +12,7 @@ import { useEffect, useRef } from 'react';
 gsap.registerPlugin(ScrollTrigger);
 
 function Space() {
+  const screenWidth = window.innerWidth;
   const spaceshipRef = useRef();
   const spaceshipTrigger = useRef();
   const backdropRef = useRef();
@@ -25,44 +27,141 @@ function Space() {
       end: 'center center',
       toggleActions: 'play pause reverse pause',
       onEnter: () => {
-        gsap.to(spaceshipTrigger.current, {
-          position: 'fixed',
-          top: 0,
-        });
-        gsap.fromTo(
-          spaceshipRef.current,
-          {
-            y: -1000,
-            x: 1500,
+        if (screenWidth >= 768) {
+          gsap.to(spaceshipTrigger.current, {
+            position: 'fixed',
+            top: 0,
+          });
+          gsap.fromTo(
+            spaceshipRef.current,
+            {
+              y: -1000,
+              x: 1500,
+              opacity: 0,
+              scale: 0.2,
+              display: 'flex',
+            },
+            {
+              opacity: 1,
+              display: 'flex',
+              duration: 1,
+              y: 0,
+              x: 0,
+              scale: 1.2,
+              ease: 'expoScale(0.5,7,none)',
+            },
+          );
+          gsap.to(passageRef.current, {
             opacity: 0,
-            scale: 0.2,
-            display: 'flex',
-          },
-          {
-            opacity: 1,
-            display: 'flex',
-            duration: 1,
-            y: 0,
-            x: 0,
-            scale: 1.2,
+            scale: 0,
+            display: 'none',
+            duration: 0.2,
             ease: 'expoScale(0.5,7,none)',
-          },
-        );
+          });
+          gsap.to(passageTextRef.current, {
+            y: 500,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'none',
+          });
+        } else {
+          gsap.to(spaceshipTrigger.current, {
+            position: 'fixed',
+            top: 0,
+          });
+          gsap.fromTo(
+            spaceshipRef.current,
+            {
+              y: -50,
+              x: 1500,
+              opacity: 0,
+              scale: 1.5,
+              display: 'flex',
+            },
+            {
+              opacity: 1,
+              display: 'flex',
+              duration: 1,
+              x: 200,
+              scale: 3,
+              ease: 'expoScale(0.5,7,none)',
+            },
+          );
+          gsap.to(passageRef.current, {
+            opacity: 0,
+            scale: 0,
+            display: 'none',
+            duration: 0.2,
+            ease: 'expoScale(0.5,7,none)',
+          });
+          gsap.to(passageTextRef.current, {
+            y: 500,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'none',
+          });
+        }
       },
       onLeaveBack: () => {
-        gsap.to(spaceshipRef.current, {
-          opacity: 0,
-          display: 'none',
-          duration: 1,
-          y: -1000,
-          x: 1500,
-          scale: 0.2,
-          ease: 'expoScale(0.5,7,none)',
-        });
-        gsap.to(spaceshipTrigger.current, {
-          position: 'relative',
-          top: 0,
-        });
+        if (screenWidth >= 768) {
+          gsap.to(spaceshipRef.current, {
+            opacity: 0,
+            display: 'none',
+            duration: 1,
+            y: -1000,
+            x: 1500,
+            scale: 1.5,
+            ease: 'expoScale(0.5,7,none)',
+          });
+          gsap.to(spaceshipTrigger.current, {
+            position: 'relative',
+            top: 0,
+          });
+          gsap.to(passageRef.current, {
+            opacity: 0,
+            scale: 0,
+            display: 'none',
+            duration: 0.2,
+            ease: 'expoScale(0.5,7,none)',
+          });
+          gsap.to(passageTextRef.current, {
+            y: 500,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'none',
+          });
+        } else {
+          gsap.to(spaceshipRef.current, {
+            opacity: 0,
+            display: 'none',
+            duration: 1,
+            y: 0,
+            x: 1500,
+            scale: 0.2,
+            ease: 'expoScale(0.5,7,none)',
+          });
+          gsap.to(spaceshipTrigger.current, {
+            position: 'relative',
+            top: 0,
+          });
+          gsap.to(passageRef.current, {
+            opacity: 0,
+            scale: 0,
+            display: 'none',
+            duration: 0.2,
+            ease: 'expoScale(0.5,7,none)',
+          });
+          gsap.to(passageTextRef.current, {
+            y: 500,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'none',
+          });
+        }
       },
       // markers: true, // Remove this in production
     });
@@ -75,75 +174,154 @@ function Space() {
       end: 'end center',
       toggleActions: 'play pause reverse pause',
       onEnter: () => {
-        gsap.to(spaceshipRef.current, {
-          duration: 1,
-          scale: 2,
-          ease: 'expoScale(0.5,7,none)',
-        });
+        if (screenWidth >= 768) {
+          gsap.to(spaceshipRef.current, {
+            duration: 1,
+            scale: 2,
+            ease: 'expoScale(0.5,7,none)',
+          });
 
-        gsap.to(backdropRef.current, {
-          opacity: 1,
-          duration: 1,
-          ease: 'expoScale(0.5,7,none)',
-          display: 'flex',
-        });
-        gsap.to(spaceshipRef.current, {
-          opacity: 1,
-          display: 'flex',
-          duration: 1,
-          ease: 'expoScale(0.5,7,none)',
-        });
-        gsap.to(passageRef.current, {
-          opacity: 0,
-          scale: 0,
-          display: 'none',
-          duration: 0.2,
-          ease: 'expoScale(0.5,7,none)',
-        });
-        gsap.to(portalRef.current, {
-          opacity: 0,
-          rotateZ: 0,
-          duration: 2,
-          scale: 0,
-          ease: 'expoScale(0.5,7,none)',
-          display: 'none',
-        });
+          gsap.to(backdropRef.current, {
+            opacity: 1,
+            duration: 1,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'flex',
+          });
+
+          gsap.to(passageRef.current, {
+            opacity: 0,
+            scale: 0,
+            display: 'none',
+            duration: 0.2,
+            ease: 'expoScale(0.5,7,none)',
+          });
+          gsap.to(portalRef.current, {
+            opacity: 0,
+            rotateZ: 0,
+            duration: 2,
+            scale: 0,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'none',
+          });
+          gsap.to(passageTextRef.current, {
+            y: 500,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'none',
+          });
+        } else {
+          gsap.to(spaceshipRef.current, {
+            duration: 1,
+            scale: 6,
+            ease: 'expoScale(0.5,7,none)',
+          });
+          gsap.to(backdropRef.current, {
+            opacity: 1,
+            duration: 1,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'flex',
+          });
+          gsap.to(passageRef.current, {
+            opacity: 0,
+            scale: 0,
+            display: 'none',
+            duration: 0.2,
+            ease: 'expoScale(0.5,7,none)',
+          });
+          gsap.to(portalRef.current, {
+            opacity: 0,
+            rotateZ: 0,
+            duration: 2,
+            scale: 0,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'none',
+          });
+          gsap.to(passageTextRef.current, {
+            y: 500,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'none',
+          });
+        }
       },
       onLeaveBack: () => {
-        gsap.to(spaceshipRef.current, {
-          duration: 1,
-          scale: 1.2,
-          ease: 'expoScale(0.5,7,none)',
-          delay: 1,
-        });
-        gsap.to(backdropRef.current, {
-          opacity: 0,
-          duration: 1,
-          ease: 'expoScale(0.5,7,none)',
-          display: 'hidden',
-          delay: 1,
-        });
-        gsap.to(spaceshipRef.current, {
-          opacity: 1,
-          display: 'flex',
-          duration: 1,
-          ease: 'expoScale(0.5,7,none)',
-        });
-        gsap.to(passageRef.current, {
-          opacity: 0,
-          scale: 0,
-          display: 'none',
-          duration: 0.2,
-          ease: 'expoScale(0.5,7,none)',
-        });
-        gsap.to(portalRef.current, {
-          opacity: 0,
-          rotateZ: 0,
-          duration: 2,
-          scale: 0,
-          ease: 'expoScale(0.5,7,none)',
-          display: 'none',
-        });
+        if (screenWidth >= 768) {
+          gsap.to(spaceshipRef.current, {
+            duration: 1,
+            scale: 1.2,
+            ease: 'expoScale(0.5,7,none)',
+            delay: 1,
+            opacity: 1,
+          });
+          gsap.to(backdropRef.current, {
+            opacity: 0,
+            duration: 1,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'hidden',
+            delay: 1,
+          });
+          gsap.to(passageRef.current, {
+            opacity: 0,
+            scale: 0,
+            display: 'none',
+            duration: 0.2,
+            ease: 'expoScale(0.5,7,none)',
+          });
+          gsap.to(passageTextRef.current, {
+            y: 500,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'none',
+          });
+          gsap.to(portalRef.current, {
+            opacity: 0,
+            rotateZ: 0,
+            duration: 2,
+            scale: 0,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'none',
+          });
+        } else {
+          gsap.to(spaceshipRef.current, {
+            duration: 1,
+            scale: 3,
+            ease: 'expoScale(0.5,7,none)',
+            delay: 1,
+            opacity: 1,
+          });
+          gsap.to(backdropRef.current, {
+            opacity: 0,
+            duration: 1,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'hidden',
+            delay: 1,
+          });
+          gsap.to(passageRef.current, {
+            opacity: 0,
+            scale: 0,
+            display: 'none',
+            duration: 0.2,
+            ease: 'expoScale(0.5,7,none)',
+          });
+          gsap.to(passageTextRef.current, {
+            y: 500,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'none',
+          });
+          gsap.to(portalRef.current, {
+            opacity: 0,
+            rotateZ: 0,
+            duration: 2,
+            scale: 0,
+            ease: 'expoScale(0.5,7,none)',
+            display: 'none',
+          });
+        }
       },
       // markers: true, // Remove this in production
     });
@@ -163,7 +341,6 @@ function Space() {
           ease: 'expoScale(0.5,7,none)',
           delay: 1,
         });
-
         gsap.to(passageRef.current, {
           opacity: 1,
           scale: 1,
@@ -172,21 +349,40 @@ function Space() {
           ease: 'expoScale(0.5,7,none)',
           delay: 1,
         });
-        gsap.fromTo(
-          passageTextRef.current,
-          {
-            y: 500,
-            opacity: 0,
-          },
-          {
-            y: -150,
-            opacity: 1,
-            duration: 1,
-            ease: 'expoScale(0.5,7,none)',
-            display: 'flex',
-            delay: 2,
-          },
-        );
+        if (screenWidth >= 768) {
+          gsap.fromTo(
+            passageTextRef.current,
+            {
+              y: 500,
+              opacity: 0,
+            },
+            {
+              y: -100,
+              opacity: 1,
+              duration: 1,
+              ease: 'expoScale(0.5,7,none)',
+              display: 'flex',
+              delay: 2,
+            },
+          );
+        } else {
+          gsap.fromTo(
+            passageTextRef.current,
+            {
+              y: 500,
+              opacity: 0,
+            },
+            {
+              y: -30,
+              opacity: 1,
+              duration: 1,
+              ease: 'expoScale(0.5,7,none)',
+              display: 'flex',
+              delay: 2,
+            },
+          );
+        }
+
         gsap.to(portalRef.current, {
           opacity: 0,
           rotateZ: 0,
@@ -218,7 +414,7 @@ function Space() {
             display: 'flex',
           },
           {
-            y: 0,
+            y: 500,
             opacity: 0,
             duration: 0.5,
             ease: 'expoScale(0.5,7,none)',
@@ -292,7 +488,7 @@ function Space() {
           display: 'none',
         });
       },
-      markers: true, // Remove this in production
+      // markers: true, // Remove this in production
     });
   }
 
@@ -308,7 +504,7 @@ function Space() {
       <img src={Background} alt='' className='w-full h-full absolute object-cover z-0' />
       <div
         ref={spaceshipTrigger}
-        className='relative flex justify-end items-center flex-col my-auto h-full min-h-screen max-h-screen w-full'
+        className='relative flex md:justify-end justify-center items-center flex-col my-auto h-full min-h-screen max-h-screen w-full'
       >
         <img
           id='spaceship'
@@ -331,13 +527,25 @@ function Space() {
           alt=''
           className='w-full h-full absolute object-cover hidden z-10'
         />
-        <img
-          id='passageText'
-          ref={passageTextRef}
-          src={PassageText}
-          alt=''
-          className='w-[75%] h-[75%] absolute hidden z-40'
-        />
+
+        {screenWidth >= 768 ? (
+          <img
+            id='passageText'
+            ref={passageTextRef}
+            src={PassageText}
+            alt=''
+            className='w-[75%] h-[75%] absolute hidden z-40'
+          />
+        ) : (
+          <img
+            id='passageText'
+            ref={passageTextRef}
+            src={MobilePassageText}
+            alt=''
+            className='w-[75%] h-[75%] absolute hidden z-40'
+          />
+        )}
+
         <img
           id='portal'
           ref={portalRef}

@@ -8,8 +8,8 @@ function Hero() {
           <p>AXELONS</p>
         </div>
         <div className='nav-right'>
-          <p>our story</p>
-          <p>our team</p>
+          {/* <p>our story</p>
+          <p>our team</p> */}
         </div>
       </nav>
       <div className='section-one'>
