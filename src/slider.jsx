@@ -75,6 +75,7 @@ const Slider = () => {
           <source src='/images/footer-bg-video.mp4' type='video/mp4' />
         </video>
         <h1 className='text-white relative z-10 text-2xl lg:text-[40px] text-center mb-10 lg:mb-16'>
+          {' '}
           Meet the Axelions
         </h1>
         <div className='slider-container relative z-10  w-full mx-auto overflow-hidden  '>
