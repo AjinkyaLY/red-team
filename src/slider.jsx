@@ -62,7 +62,7 @@ const Slider = () => {
   };
 
   return (
-    <div className='z-50'>
+    <div>
       <div className='bg-black py-[108px] relative '>
         <div className='overlay absolute w-full h-full z-[1] top-0'></div>
         <video
