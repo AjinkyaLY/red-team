@@ -38,9 +38,7 @@ function Space() {
   //     );
   //   }
 
-  useEffect(() => {
-    // gsap.set(spaceshipRef, { opacity: 0, scale: 0.2 });
-
+  function something() {
     gsap.fromTo(
       spaceshipRef.current,
       {
@@ -58,15 +56,26 @@ function Space() {
         x: 0,
         scale: 1.2,
         ease: 'expoScale(0.5,7,none)',
-        scrollTrigger: {
-          trigger: spaceshipDivRef.current,
-          start: 'top center',
-          end: 'center center',
-          toggleActions: 'play none none reverse',
-          markers: true,
-        },
+        // scrollTrigger: {
+        //   trigger: spaceshipDivRef.current,
+        //   start: 'top center',
+        //   end: 'center center',
+        //   toggleActions: 'play none none reverse',
+        //   markers: true,
+        // },
       },
     );
+  }
+
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: spaceshipDivRef.current,
+      start: 'top center',
+      end: 'center center',
+      toggleActions: 'restart pause reverse pause',
+      markers: true,
+      onEnter: something(),
+    });
   }, []);
 
   return (
