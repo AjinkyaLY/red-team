@@ -435,6 +435,14 @@ function Space() {
   }
 
   function toJersey() {
+    const sliderRef = document.getElementById('sliderRef');
+
+    const itemsToRemove = [
+      document.getElementById('portal'),
+      document.getElementById('passage'),
+      document.getElementById('backdrop'),
+    ];
+
     ScrollTrigger.create({
       trigger: spaceshipTrigger.current,
       start: 'center 10%',
@@ -463,6 +471,19 @@ function Space() {
           ease: 'expoScale(0.5,7,none)',
           display: 'flex',
         });
+
+        gsap.to(sliderRef, {
+          opacity: 1,
+          duration: 1,
+          ease: 'expoScale(0.5,7,none)',
+        });
+
+        gsap.to(itemsToRemove, {
+          opacity: 0,
+          duration: 0.2,
+          ease: 'expoScale(0.5,7,none)',
+          delay: 2,
+        });
       },
       onLeaveBack: () => {
         gsap.fromTo(
@@ -487,6 +508,16 @@ function Space() {
           ease: 'expoScale(0.5,7,none)',
           display: 'none',
         });
+        gsap.to(sliderRef.current, {
+          opacity: 0,
+          duration: 1,
+          ease: 'expoScale(0.5,7,none)',
+        });
+        gsap.to(itemsToRemove, {
+          opacity: 1,
+          duration: 0.2,
+          ease: 'expoScale(0.5,7,none)',
+        });
       },
       // markers: true, // Remove this in production
     });
@@ -500,7 +531,7 @@ function Space() {
   }, []);
 
   return (
-    <div className='bg-black w-full h-full min-h-screen flex items-center'>
+    <div className='bg-black w-full h-full min-h-screen flex items-center z-[100]'>
       <img src={Background} alt='' className='w-full h-full absolute object-cover z-0' />
       <div
         ref={spaceshipTrigger}
@@ -511,21 +542,21 @@ function Space() {
           ref={spaceshipRef}
           src={Spaceship}
           alt=''
-          className='relative z-10 opacity-0 scale-[0.2] x-[1500]'
+          className='relative z-20 opacity-0 scale-[0.2] x-[1500]'
         />
         <img
           id='backdrop'
           ref={backdropRef}
           src={Backdrop}
           alt=''
-          className='w-full h-full absolute object-cover hidden z-20'
+          className='w-full h-full absolute object-cover hidden z-30'
         />
         <img
           id='passage'
           ref={passageRef}
           src={Passage}
           alt=''
-          className='w-full h-full absolute object-cover hidden z-10'
+          className='w-full h-full absolute object-cover hidden z-20'
         />
 
         {screenWidth >= 768 ? (
@@ -534,7 +565,7 @@ function Space() {
             ref={passageTextRef}
             src={PassageText}
             alt=''
-            className='w-[75%] h-[75%] absolute hidden z-40'
+            className='w-[75%] h-[75%] absolute hidden z-50'
           />
         ) : (
           <img
@@ -542,7 +573,7 @@ function Space() {
             ref={passageTextRef}
             src={MobilePassageText}
             alt=''
-            className='w-[75%] h-[75%] absolute hidden z-40'
+            className='w-[75%] h-[75%] absolute hidden z-50'
           />
         )}
 
@@ -551,7 +582,7 @@ function Space() {
           ref={portalRef}
           src={Portal}
           alt=''
-          className='w-[75%] h-[75%] hidden absolute z-40 top-[120px] scale-0'
+          className='w-[75%] h-[75%] hidden absolute z-50 top-[120px] scale-0'
         />
       </div>
     </div>
