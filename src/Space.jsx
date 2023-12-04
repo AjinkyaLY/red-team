@@ -100,6 +100,14 @@ function Space() {
           duration: 0.2,
           ease: 'expoScale(0.5,7,none)',
         });
+        gsap.to(portalRef.current, {
+          opacity: 0,
+          rotateZ: 0,
+          duration: 2,
+          scale: 0,
+          ease: 'expoScale(0.5,7,none)',
+          display: 'none',
+        });
       },
       onLeaveBack: () => {
         gsap.to(spaceshipRef.current, {
@@ -127,6 +135,14 @@ function Space() {
           display: 'none',
           duration: 0.2,
           ease: 'expoScale(0.5,7,none)',
+        });
+        gsap.to(portalRef.current, {
+          opacity: 0,
+          rotateZ: 0,
+          duration: 2,
+          scale: 0,
+          ease: 'expoScale(0.5,7,none)',
+          display: 'none',
         });
       },
       // markers: true, // Remove this in production
@@ -171,6 +187,14 @@ function Space() {
             delay: 2,
           },
         );
+        gsap.to(portalRef.current, {
+          opacity: 0,
+          rotateZ: 0,
+          duration: 2,
+          scale: 0,
+          ease: 'expoScale(0.5,7,none)',
+          display: 'none',
+        });
       },
       onLeaveBack: () => {
         gsap.to(spaceshipRef.current, {
@@ -201,6 +225,14 @@ function Space() {
             display: 'none',
           },
         );
+        gsap.to(portalRef.current, {
+          opacity: 0,
+          rotateZ: 0,
+          duration: 2,
+          scale: 0,
+          ease: 'expoScale(0.5,7,none)',
+          display: 'none',
+        });
       },
       //  markers: true, // Remove this in production
     });
