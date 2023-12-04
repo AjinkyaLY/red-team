@@ -11,7 +11,7 @@ function App() {
       <div className='h-[50px]'>
         <img src={Background} alt='' className='w-full h-full absolute object-cover z-[-1]' />
       </div>
-      <div id='sliderRef' className='opacity-0'>
+      <div id='sliderRef' className='opacity-0 z-[999]'>
         <Slider />
       </div>
     </div>

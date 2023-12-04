@@ -62,7 +62,7 @@ const Slider = () => {
   };
 
   return (
-    <div>
+    <div className='z-50'>
       <div className='bg-black py-[108px] relative '>
         <div className='overlay absolute w-full h-full z-[1] top-0'></div>
         <video
@@ -130,7 +130,7 @@ const Slider = () => {
               </svg>
             </button>
             <button
-              className='text-white pr-[73px]'
+              className='text-white pr-[73px] cursor-pointer'
               // style={{
               //   background: `linear-gradient(270deg, #1D1C1F 14.29%, rgba(29, 28, 31, 0.00) 88.1%)`,
               // }}
