@@ -6,10 +6,10 @@
   font-family: ferretface;
   src: url(/images/ferretface.ttf);
 }
-@font-face {
+/* @font-face {
   font-family: duneRise;
   src: url(/images/Dune_Rise.ttf);
-}
+} */
 
 /* width */
 ::-webkit-scrollbar {
@@ -27,10 +27,14 @@
 }
 
 body {
+  font-family: ferretface;
+}
+
+/* body {
   font-family: duneRise;
   width: 100%;
   height: 100%;
-}
+} */
 
 .overlay {
   opacity: 98%;
