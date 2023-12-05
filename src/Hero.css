@@ -111,9 +111,9 @@ nav::before {
 
 .section-one .planet {
   position: absolute;
-  bottom: 10%;
-  width: 34vw;
-  height: 34vw;
+  bottom: 8%;
+  width: 32vw;
+  height: 32vw;
   z-index: 2;
   z-index: 2;
 }
